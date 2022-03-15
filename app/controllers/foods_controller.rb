@@ -10,7 +10,12 @@ class FoodsController < ApplicationController
   end
   
   def create
-    @food = current_user.foods.create!(food_params)
+    @food = current_user.foods.create!(
+      name: params[:food][:name],
+      measurement_unit: params[:food][:measurement_unit],
+      price: params[:food][:price]
+    )
+
     respond_to do |format|
       if @food.save
         format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
