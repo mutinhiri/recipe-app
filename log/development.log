@@ -506,3 +506,386 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 877ms (Views: 874.2ms | ActiveRecord: 0.0ms | Allocations: 37206)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-15 08:47:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/register" for 127.0.0.1 at 2022-03-15 08:47:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/register"):
+  
+Started GET "/users/register" for 127.0.0.1 at 2022-03-15 08:48:17 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/register"):
+  
+Started GET "/users/register" for 127.0.0.1 at 2022-03-15 08:48:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/register"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-03-15 08:49:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-03-15 08:49:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 08:50:41 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 08:51:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-03-15 08:51:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 08:51:54 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 8.3ms | Allocations: 1587)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 178.3ms | Allocations: 7256)
+  Rendered layout layouts/application.html.erb (Duration: 434.8ms | Allocations: 40864)
+Completed 200 OK in 677ms (Views: 442.0ms | ActiveRecord: 129.9ms | Allocations: 60052)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 08:53:06 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-03-15 08:53:14 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-15 08:54:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 89.9ms | Allocations: 419)
+  Rendered devise/shared/_links.html.erb (Duration: 6.4ms | Allocations: 1366)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 169.3ms | Allocations: 7294)
+  Rendered layout layouts/application.html.erb (Duration: 412.5ms | Allocations: 41406)
+Completed 200 OK in 532ms (Views: 420.1ms | ActiveRecord: 18.8ms | Allocations: 60133)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:00:43 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 7.5ms | Allocations: 1391)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.5ms | Allocations: 3695)
+  Rendered layout layouts/application.html.erb (Duration: 100.4ms | Allocations: 17462)
+Completed 200 OK in 249ms (Views: 117.5ms | ActiveRecord: 23.9ms | Allocations: 25034)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:00:55 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jdoe@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (124.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jdoe@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1244ms (ActiveRecord: 125.5ms | Allocations: 6561)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:00:56 +0100
+  
+ActionController::RoutingError (uninitialized constant FoodController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FoodsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:00:57 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 35ms (ActiveRecord: 1.5ms | Allocations: 1785)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:00:57 +0100
+  
+ActionController::RoutingError (uninitialized constant FoodController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FoodsController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:01:32 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 318)
+  Rendered layout layouts/application.html.erb (Duration: 214.2ms | Allocations: 14117)
+Completed 200 OK in 227ms (Views: 223.9ms | ActiveRecord: 0.0ms | Allocations: 15301)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:01:41 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:02:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:02:12 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 632)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 3263)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.0ms | Allocations: 4392)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:02:16 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:02:17 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 2377)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms | Allocations: 2669)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:02:32 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 119ms (ActiveRecord: 33.8ms | Allocations: 5996)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:02:32 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 314)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 2474)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 2791)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:02:35 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:02:36 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 298)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 2353)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms | Allocations: 2623)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:02:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 39ms (ActiveRecord: 3.8ms | Allocations: 1597)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:02:45 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 2368)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms | Allocations: 2638)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:04:43 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 611)
+  Rendered layout layouts/application.html.erb (Duration: 98.4ms | Allocations: 3245)
+Completed 200 OK in 124ms (Views: 120.3ms | ActiveRecord: 0.0ms | Allocations: 4401)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:04:47 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:04:48 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 2389)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 2678)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:04:51 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:04:51 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 292)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 2347)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 2617)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-15 09:05:06 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 2.8ms | Allocations: 2073)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:05:06 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 2490)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 2807)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:09:58 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:09:59 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:1
+  Rendered foods/index.html.erb within layouts/application (Duration: 147.7ms | Allocations: 18446)
+  Rendered layout layouts/application.html.erb (Duration: 489.0ms | Allocations: 52197)
+Completed 200 OK in 523ms (Views: 467.5ms | ActiveRecord: 33.8ms | Allocations: 56342)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:10:03 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:10:04 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:1
+  Rendered foods/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 1305)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 3364)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 1.6ms | Allocations: 3659)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:13:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:13:49 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:1
+  Rendered foods/index.html.erb within layouts/application (Duration: 108.3ms | Allocations: 18443)
+  Rendered layout layouts/application.html.erb (Duration: 368.6ms | Allocations: 52677)
+Completed 200 OK in 389ms (Views: 354.0ms | ActiveRecord: 20.8ms | Allocations: 56822)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:13:56 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 318)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 2406)
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 2723)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:14:02 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 17.3ms | Allocations: 1590)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 63.4ms | Allocations: 6747)
+  Rendered layout layouts/application.html.erb (Duration: 80.6ms | Allocations: 8989)
+Completed 200 OK in 105ms (Views: 96.2ms | ActiveRecord: 0.0ms | Allocations: 11167)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:14:12 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jdoe@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jdoe@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 925ms (ActiveRecord: 1.2ms | Allocations: 13660)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:14:13 +0100
+Processing by FoodsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:1
+  Rendered foods/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1361)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 3536)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 1.4ms | Allocations: 3879)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:14:16 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 76ms (ActiveRecord: 1.6ms | Allocations: 3279)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:14:16 +0100
+Processing by FoodsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 2526)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 2845)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:14:33 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:1
+  Rendered foods/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 3367)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 3.7ms | Allocations: 3637)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:14:37 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 21ms (ActiveRecord: 1.6ms | Allocations: 1831)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:14:37 +0100
+Processing by FoodsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 2361)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 2637)
+
+

@@ -1,9 +1,7 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
-  def index
-    
-  end
-  
+  def index; end
+
   private
 
   def food_params
@@ -13,6 +11,4 @@ class FoodsController < ApplicationController
   def set_food
     @food = Food.find(params[:id])
   end
-  
-  
 end

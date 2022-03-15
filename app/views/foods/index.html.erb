@@ -1,1 +1,7 @@
+<% if current_user %>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'signin', new_user_session_path %>
+  <%= link_to 'signup',  new_user_registration_path %>
+<% end %>
 <h1>Welcome to Food Index Page</h1>
