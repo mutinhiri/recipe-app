@@ -945,3 +945,41 @@ Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 2.1ms | Allocations: 568
 
   [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-03-15 09:29:39 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 26ms (ActiveRecord: 0.9ms | Allocations: 2615)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:29:39 +0100
+Processing by FoodsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 2504)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 2818)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-15 09:29:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 195)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1833)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 4073)
+Completed 200 OK in 54ms (Views: 48.7ms | ActiveRecord: 0.0ms | Allocations: 5492)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-15 09:29:55 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 121)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.4ms | Allocations: 1222)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 3269)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 0.0ms | Allocations: 3945)
+
+
