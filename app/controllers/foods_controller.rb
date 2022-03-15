@@ -1,6 +1,9 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
-  def index; end
+  
+  def index
+    @food = Food.all
+  end
 
   def create
     @food = current_user.foods.create!(food_params)
