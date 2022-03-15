@@ -1,14 +1,16 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
-  
+
   def index
     @food = Food.all
   end
 
+  def show; end
+
   def new
     @food = Food.new
   end
-  
+
   def create
     @food = current_user.foods.create!(
       name: params[:food][:name],
@@ -26,7 +28,7 @@ class FoodsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @food.destroy
     respond_to do |format|
@@ -34,7 +36,6 @@ class FoodsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
 
   private
 
