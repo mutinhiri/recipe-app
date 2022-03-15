@@ -889,3 +889,59 @@ Processing by FoodsController#index as TURBO_STREAM
 Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 2637)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-15 09:27:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 386)
+  Rendered devise/shared/_links.html.erb (Duration: 4.6ms | Allocations: 1115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 3937)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 17727)
+Completed 200 OK in 154ms (Views: 69.2ms | ActiveRecord: 14.8ms | Allocations: 24919)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-03-15 09:27:45 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Kenny Smith", "email"=>"ksmith@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksmith@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (94.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at", "food_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "ksmith@example.com"], ["encrypted_password", "[FILTERED]"], ["name", "Kenny Smith"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-03-15 08:27:46.408298"], ["unconfirmed_email", nil], ["created_at", "2022-03-15 08:27:46.407744"], ["updated_at", "2022-03-15 08:27:46.407744"], ["food_id", nil]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 28.5ms | Allocations: 595)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 48.9ms
+Delivered mail 62304e02c9c7a_31bb372877866@emmy-VirtualBox.mail (26.0ms)
+Date: Tue, 15 Mar 2022 09:27:46 +0100
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ksmith@example.com
+Message-ID: <62304e02c9c7a_31bb372877866@emmy-VirtualBox.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ksmith@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Lm8VxGeQN8-DLzVkmPs2">Confirm my account</a></p>
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1179ms (ActiveRecord: 100.3ms | Allocations: 40096)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-15 09:27:46 +0100
+Processing by FoodsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:1
+  Rendered foods/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 2205)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 4463)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 2.1ms | Allocations: 5689)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
