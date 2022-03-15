@@ -11,8 +11,21 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <div class="header">
+      <a href="#default" class="logo">Recipe</a>
+      <div class="header-right">
+       <%= link_to 'Food', root_path, class: 'active' %>
+        <a href="#contact">Inventory</a>
+        <a href="#about">Recipe Food </a>
+        <% if current_user %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'signin', new_user_session_path %>
+          <%= link_to 'signup',  new_user_registration_path %>
+        <% end %>
+      </div>
+    </div>
+  
     <%= yield %>
   </body>
 </html>
