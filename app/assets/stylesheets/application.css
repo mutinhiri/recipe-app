@@ -75,6 +75,7 @@
   background: white;
   padding: 10px;
 }
+
 .add-food{
   float: right;
   margin-bottom: 2rem;
@@ -106,4 +107,9 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.field,
+.actions {
+  margin-bottom: 1rem;
 }
