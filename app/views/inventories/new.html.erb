@@ -1,0 +1,13 @@
+<h2>here new inventory is created</h2>
+<%= render 'partials/flash' %>
+
+<%= form_with(model: @inventory, scope: :data) do |f| %>
+  <div>
+    <h2>Inventory: </h2>
+    <%= f.label(:name, "Inventory's name") %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= link_to "Back to inventories", inventories_path %>
+  <%= f.submit 'Save Inventory' %>
+  <% end %>
