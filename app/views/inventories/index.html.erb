@@ -1,0 +1,19 @@
+<h1>here inventories will be displayed</h1>
+
+<%= link_to 'Add new Inventory', new_inventory_path %>
+
+<% if @inventories.any? %>
+  <ul>
+    <% @inventories.each_with_index do |inventory, index| %>
+      <li>
+        <%= index + 1 %>:
+        <%= inventory.name %>
+        <%= link_to 'Show this inventory', inventory %>
+         <%= button_to "Delete this inventory", inventory_path(inventory), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h5>No inventories yet</h5>
+<% end %>
+
