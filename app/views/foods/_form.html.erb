@@ -1,16 +1,16 @@
 <%= form_with(model: food) do |form| %>
   <div>
-    <div>
+    <div class="field">
       <%= form.label :name, style: "display: block "%>
       <%= form.text_field :name %>
     </div>
 
-    <div>
+    <div class="field">
       <%= form.label :measurement, style: "display: block "%>
       <%= form.text_field :measurement_unit %>
     </div>
 
-    <div>
+    <div class="field">
       <%= form.label :price, style: "display: block "%>
       <%= form.text_field :price %>
     </div>
