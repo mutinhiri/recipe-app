@@ -2,6 +2,27 @@
 
 <%= render @inventory %>
 
+<%= link_to "Add items", new_inventory_inventory_food_path(@inventory) %>
+
+<div>
+  <% if @inventory.inventory_foods.any? %>
+    <ul>
+      <% @inventory.inventory_foods.each do |item| %>
+        <li>
+          <h5>Item name</h5>
+          <%= item.food.name %>
+          <h5>Item quantity</h5>
+          <%= "#{item.quantity}#{item.food.measurement_unit}" %>
+          <%= button_to "Delete item", inventory_inventory_food_path(@inventory, item), method: :delete %>
+        </li>
+      <% end %>
+    <ul>
+  <% else %>
+    <h4>No items in this inventory</h4>
+  <% end %>
+
+</div>
+
 <div>
   <%= link_to "Edit this inventory", edit_inventory_path(@inventory) %> |
   <%= link_to "Back to inventories", inventories_path %>
