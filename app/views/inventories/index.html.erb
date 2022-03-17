@@ -1,24 +1,36 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Inventories</h1>
-
-<div id="inventories">
-  <% if @inventories.any? %> 
-    <ul>
-      <% @inventories.each_with_index do |inventory, index| %>
-        <li>
-          <%= index + 1 %>
-          <%= render inventory %>
-          <p>
-            <%= link_to "Show this inventory", inventory %>
-          </p>
-          <%= button_to "Destroy this inventory", inventory, method: :delete %>
-        </li>
-      <% end %>
-    </ul>
-  <% else %>
-    <h4>No inventories yet</h4>
-  <% end %>  
+<div class="inventories-page">
+  <h2>Inventories</h2>
+  <div>
+    <%= link_to "New inventory", new_inventory_path, class: 'add-inventory' %>
+  </div>
+  <div>
+    <% if @inventories.any? %>
+      <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Inventory Name</th>
+            <th>Inventory Author</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+           <% @inventories.each_with_index do |inventory, index| %>
+            <tr>
+              <td><%= index+=1 %></td>
+              <td><%= inventory.name %></td>
+              <td><%= current_user.name %></td>
+              <td class="flex-buttons">
+                <%= link_to "Show", inventory, class: 'blue-button btn' %>
+                <%= button_to "Delete", inventory, method: :delete, class: 'delete-btn btn' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h3>No inventories yet</h3>
+    <% end %>   
+  </div>
 </div>
-
-<%= link_to "New inventory", new_inventory_path %>

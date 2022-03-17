@@ -1,31 +1,43 @@
-<p style="color: green"><%= notice %></p>
+<div class="inventories-page">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @inventory %>
+  <%= render @inventory %>
 
-<%= link_to "Add items", new_inventory_inventory_food_path(@inventory) %>
+  <%= link_to "Add items", new_inventory_inventory_food_path(@inventory), class: "add-items" %>
 
-<div>
-  <% if @inventory.inventory_foods.any? %>
-    <ul>
-      <% @inventory.inventory_foods.each do |item| %>
-        <li>
-          <h5>Item name</h5>
-          <%= item.food.name %>
-          <h5>Item quantity</h5>
-          <%= "#{item.quantity}#{item.food.measurement_unit}" %>
-          <%= button_to "Delete item", inventory_inventory_food_path(@inventory, item), method: :delete %>
-        </li>
-      <% end %>
-    <ul>
-  <% else %>
-    <h4>No items in this inventory</h4>
-  <% end %>
+  <div>
+    <% if @inventory.inventory_foods.any? %>
+       <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Item Name</th>
+            <th>Item Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @inventory.inventory_foods.each_with_index do |item, index| %>
+            <tr>
+              <td><%= index+=1 %></td>
+              <td><%= item.food.name %></td>
+              <td><%= "#{item.quantity}#{item.food.measurement_unit}" %></td>
+              <td><%= button_to "Delete item", inventory_inventory_food_path(@inventory, item), method: :delete, class: 'delete-btn btn' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </table>   
+    <% else %>
+      <h4>No items in this inventory</h4>
+    <% end %>
+  </div>
 
+  <div class="show-btns">
+    <%= link_to "Rename Inventory", edit_inventory_path(@inventory), class: "link-btn" %> |
+    <%= link_to "Back to Inventories", inventories_path, class: "link-btn" %>
+
+    <%= button_to "Destroy Inventory", @inventory, method: :delete, class: 'delete-btn btn btn-margins' %>
+  </div>
 </div>
 
-<div>
-  <%= link_to "Edit this inventory", edit_inventory_path(@inventory) %> |
-  <%= link_to "Back to inventories", inventories_path %>
-
-  <%= button_to "Destroy this inventory", @inventory, method: :delete %>
-</div>
