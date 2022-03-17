@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   subject do
     User.new(
       name: 'John Doe',
-      email: 'jdoe@example.com',
+      email: 'john.doe@example.com',
       password: 'passowrd'
     )
   end

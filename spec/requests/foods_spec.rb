@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Foods', type: :request do
   current_user = User.first_or_create!(
     name: 'John Doe',
-    email: 'jdoe@example.com', 
+    email: 'john.doe@example.com', 
     password: 'password', 
     password_confirmation: 'password'
   )
