@@ -12,10 +12,16 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @foods = Food.all
+    @recipe.recipe_foods.build
   end
 
   # GET /recipes/1/edit
-  def edit; end
+  def edit
+    @foods = Food.all
+    @recipe.recipe_foods.find(params[:id])
+    @food = @recipe.recipe_foods 
+  end
 
   # POST /recipes or /recipes.json
   def create
