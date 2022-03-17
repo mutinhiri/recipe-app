@@ -75,3 +75,5 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers', '~> 5.0'
 end
+
+gem 'rubocop', '>= 1.0', '< 2.0'
