@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  before_action :set_inventory, only: %i[ show edit update destroy ]
+  before_action :set_inventory, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /inventories or /inventories.json
@@ -18,8 +18,7 @@ class InventoriesController < ApplicationController
   end
 
   # GET /inventories/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /inventories or /inventories.json
   def create
@@ -27,7 +26,7 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to inventory_url(@inventory), notice: "Inventory was successfully created." }
+        format.html { redirect_to inventory_url(@inventory), notice: 'Inventory was successfully created.' }
         format.json { render :show, status: :created, location: @inventory }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +39,7 @@ class InventoriesController < ApplicationController
   def update
     respond_to do |format|
       if @inventory.update(inventory_params.merge(user: current_user))
-        format.html { redirect_to inventory_url(@inventory), notice: "Inventory was successfully updated." }
+        format.html { redirect_to inventory_url(@inventory), notice: 'Inventory was successfully updated.' }
         format.json { render :show, status: :ok, location: @inventory }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,19 +53,20 @@ class InventoriesController < ApplicationController
     @inventory.destroy
 
     respond_to do |format|
-      format.html { redirect_to inventories_url, notice: "Inventory was successfully destroyed." }
+      format.html { redirect_to inventories_url, notice: 'Inventory was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_inventory
-      @inventory = Inventory.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def inventory_params
-      params.require(:inventory).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_inventory
+    @inventory = Inventory.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def inventory_params
+    params.require(:inventory).permit(:name)
+  end
 end
