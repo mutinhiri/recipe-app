@@ -39,6 +39,10 @@
     <%= form.label :public, style: "display: block" %>
     <%= form.check_box :public %>
   </div>
+
+  <div class="field">
+    <%= form.select(:food_id, options_from_collection_for_select(@foods, :id, :name), {required: true}, {class: "inventory-input select-input"}) %>
+  </div>
   
   <div>
     <%= form.submit %>
