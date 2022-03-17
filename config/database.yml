@@ -23,6 +23,7 @@ default: &default
   host: localhost
   username: postgres
   password: Pa$$w0rd
+
 development:
   <<: *default
   database: recipe_app_development
