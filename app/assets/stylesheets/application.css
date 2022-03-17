@@ -78,28 +78,6 @@
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .header-right {
-    float: none;
-  }
-
-.inventory-input {
-  width: 400px;
-  height: 40px;
-  border: 0.5px solid black;
-  border-radius: 5px;
-}
-
-.select-input {
-  width: 405px;
-}
-
 .inventory-input:focus {
   outline: none;
   border: 3px solid blue;
@@ -126,7 +104,6 @@
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
