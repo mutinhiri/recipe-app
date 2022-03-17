@@ -49,7 +49,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @recipes = Recipe.includes(:user).where('user_id ={current_user.id}').or(Recipe.where('public = true'))
+    @recipes = Recipe.includes(:user).where("user_id = #{current_user.id}").or(Recipe.where('public = true'))
     print @recipes
   end
 

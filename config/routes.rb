@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   root 'foods#index'
 
   resources :inventories do
-    resources :inventory_foods
+  resources :inventory_foods
   end
 end
