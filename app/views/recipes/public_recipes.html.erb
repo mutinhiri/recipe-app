@@ -5,7 +5,7 @@
 <% unless @recipes.empty?%>
   <% @recipes.each do |recipe| %>
     <li>
-      <h4><%recipe.name%></h4><p>By <%= User.find(recipe.user_id).name %></p>
+      <h4><%= recipe.name%></h4><p>By <%= User.find(recipe.user_id).name %></p>
     </li>
   <%end%>
   </ul>
