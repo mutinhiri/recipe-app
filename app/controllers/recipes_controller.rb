@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
     @foods = Food.all
     @recipe.recipe_foods.build
     @recipe.recipe_foods.find(params[:id])
-    @food = @recipe.recipe_foods 
+    @food = @recipe.recipe_foods
   end
 
   # POST /recipes or /recipes.json
