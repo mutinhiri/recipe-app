@@ -67,6 +67,8 @@ end
 
 gem 'devise'
 gem 'cancancan'
+gem "capybara"
+
 group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'

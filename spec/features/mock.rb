@@ -3,8 +3,8 @@ require 'user'
 module Mock
   def create_users
     names = [
-      { name: 'Emmanuel', email: 'john.doe@example.com', postsCounter: 5, email: 'emmanuel@2.com', role: 'admin' },
-      { name: 'Ogah', bio: 'English teacher', postsCounter: 5, email: 'ogah@2.com', role: 'admin' }
+      { name: 'Emmanuel', email: 'john.doe@example.com', role: 'admin' },
+      { name: 'Ogah', email: 'ogah@2.com', role: 'admin' }
     ]
     (0..1).each do |i|
       user = User.new(names[i])
@@ -15,5 +15,13 @@ module Mock
     end
     User.all
   end
-  
+
+  def create_foods(users)
+    users.each do |user|
+      (1..5).each do |j|
+        Food.create(name: "Food number: #{j}", measurement_unit: "gram: #{j}", price: "3: #{j}", user_id: user.id)
+      end
+    end
+    Food.all
+  end
 end
