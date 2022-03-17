@@ -65,9 +65,9 @@ group :development do
   # gem "spring"
 end
 
-gem 'devise'
 gem 'cancancan'
-gem "capybara"
+gem 'capybara'
+gem 'devise'
 
 group :test do
   gem 'database_cleaner'

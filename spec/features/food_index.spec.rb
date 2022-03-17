@@ -45,5 +45,4 @@ RSpec.describe 'Post index view', type: :feature do
       expect(page).to have_content('Foods')
     end
   end
-  
 end

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Foods', type: :request do
   current_user = User.first_or_create!(
     name: 'John Doe',
-    email: 'john.doe@example.com', 
-    password: 'password', 
+    email: 'john.doe@example.com',
+    password: 'password',
     password_confirmation: 'password'
   )
 
@@ -33,8 +33,8 @@ RSpec.describe 'Foods', type: :request do
       food.user = current_user
       food.save
       get foods_url
-      expect(response).to be_successful 
-    end 
+      expect(response).to be_successful
+    end
   end
 
   describe 'GET /show' do
@@ -63,5 +63,4 @@ RSpec.describe 'Foods', type: :request do
       expect(response).to redirect_to(foods_url)
     end
   end
-
 end

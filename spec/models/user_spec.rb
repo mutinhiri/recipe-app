@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'password is required' do
-    subject.password = "12345678"
+    subject.password = '12345678'
     expect(subject).to be_valid
   end
 
@@ -35,5 +35,4 @@ RSpec.describe User, type: :model do
     subject.email = nil
     expect(subject).to_not be_valid
   end
-  
 end
