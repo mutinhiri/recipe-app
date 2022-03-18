@@ -4,6 +4,7 @@
   <%= render @recipe %>
 
   <%= link_to "Add items", new_recipe_recipe_food_path(@recipe), class: "add-items" %>
+  <%= button_to "Generate shopping list",shopping_list_path, :method => "get" ,class: "add_items"%>
 
     <div>
       <% if @recipe.recipe_foods.any? %>

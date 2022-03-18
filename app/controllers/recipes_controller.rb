@@ -69,6 +69,10 @@ class RecipesController < ApplicationController
     print @recipes
   end
 
+  def shopping_list
+    print @foods
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
