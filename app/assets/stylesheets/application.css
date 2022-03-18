@@ -77,10 +77,19 @@
   float: right;
 }
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+.inventory-input {
+  width: 400px;
+  height: 20px;
+}
+
 .inventory-input:focus {
   outline: none;
   border: 3px solid blue;
+}
+
+.select-input {
+  width: 410px;
+  height: 30px;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -169,6 +178,10 @@ tr:nth-child(even) {
 
 .btn-margins {
   margin: 30px;
+}
+
+.btn-margin-top {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 500px) {
