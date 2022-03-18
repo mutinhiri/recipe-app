@@ -1,10 +1,10 @@
 <h1>New recipe food</h1>
 
-<%= render "form", recipe_food: @recipe_food %>
+<%= render "form", recipe_food: @recipe_food%>
 
 <%= form_with(model: @recipe_food, url: "/recipe_food/new", scope: :data) do |f| %>
   <%= f.label(:food, "recipe-food")%>
-  <%= f.select :food, @foods.map { |food| [food.name, food.id] }, {} %> <br>
+  <%= f.select :food, @foods.map { |food| [food.name, food.id] }, {}, {class: "inventory-input select-input"} %> <br>
 
   <%= f.label(:quantity, "How many do you want") %>
   <%= f.number_field :quantity, placeholder: 'Only Numbers allowed' %> <br>
