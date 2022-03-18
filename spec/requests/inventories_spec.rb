@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Inventories', type: :request do
-   before :each do
-    @current_user = User.create(name: 'Nicu', email: 'test@test.com', password: 'password' )
-    @current_user.inventories.create(name: 'Inventory 1')    
+  before :each do
+    @current_user = User.create(name: 'Nicu', email: 'test@test.com', password: 'password')
+    @current_user.inventories.create(name: 'Inventory 1')
   end
 
   describe 'when vising main page', type: :feature do
@@ -16,11 +16,10 @@ RSpec.describe 'Inventories', type: :request do
     end
   end
 
-
   describe 'GET /index' do
     it 'get base page' do
       get '/inventories'
-      expect(response).to have_http_status(302)    
+      expect(response).to have_http_status(302)
     end
-  end    
+  end
 end
