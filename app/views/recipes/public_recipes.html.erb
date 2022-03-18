@@ -4,11 +4,16 @@
 
 <% unless @recipes.empty?%>
   <% @recipes.each do |recipe| %>
-    <li>
-      <h4><%recipe.name%></h4><p>By <%= User.find(recipe.user_id).name %></p>
-    </li>
+    <div class="card">
+      <h2><%= recipe.name%></h2><p>By <%= User.find(recipe.user_id).name %></p>
+      <div class="container">
+        <p>Total food items: <%= rand(1..3)%></p>
+        <% total_price = 0 %>
+        <% total_price += rand(40..100) %>
+        <p>Total price: $ <%= total_price %>
+      </div>
+    </div>
   <%end%>
-  </ul>
 <% else %>
   <p> No foods available </p>
 <% end%>

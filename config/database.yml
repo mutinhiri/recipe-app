@@ -22,8 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: postgres
-  password: Pa$$w0rd
-
+  password: password
 development:
   <<: *default
   database: recipe_app_development
