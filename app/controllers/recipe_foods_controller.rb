@@ -1,5 +1,6 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[show edit update destroy]
+  before_action :authorize_user!
   before_action :authorize_user, only: [:destroy]
 
   # GET /recipe_foods or /recipe_foods.json
