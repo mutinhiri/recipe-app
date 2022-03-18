@@ -1,0 +1,26 @@
+  <%= form_with model: [@inventory, @inventory_food], local: true do |form| %>
+    <% if inventory_food.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(inventory_food.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+        <ul>
+          <% inventory_food.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.select(:food_id, options_from_collection_for_select(@foods, :id, :name), {required: true}, {class: "inventory-input select-input"}) %>
+    </div>
+
+    <div class="field">
+      <%= form.number_field :quantity, class: "inventory-input", placeholder: "Select Quantity", required: true %>
+    </div>
+
+    <div>
+      <%= form.submit "Add Item", class: "submit-btn btn" %>
+    </div>
+  <% end %>
+

@@ -1,0 +1,22 @@
+<%= form_with(model: food) do |form| %>
+  <div>
+    <div class="field">
+      <%= form.label :name, style: "display: block "%>
+      <%= form.text_field :name, class: "inventory-input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :measurement, style: "display: block "%>
+      <%= form.text_field :measurement_unit, class: "inventory-input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :price, style: "display: block "%>
+      <%= form.text_field :price, class: "inventory-input", required: true %>
+    </div>
+
+    <div>
+     <%= form.submit 'Create Food', class: "submit-btn btn" %>
+    </div>
+  </div>
+<% end %>

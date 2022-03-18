@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+<div class="inventories-page">
+  <h1>Recipes</h1>
+  <div>
+    <%= link_to "New recipe", new_recipe_path, class: 'add-inventory' %>
+  </div>
+  
+  <% if @recipes.any? %>
+    <div id="recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render recipe %>
+      <%= link_to "Show this recipe", recipe, class: 'blue-button btn' %>
+      <%= button_to "Destroy this recipe", @recipe, method: :delete, class: 'delete-btn btn btn-margin-top' %>
+    <% end %>
+  </div>  
+  <% else %>
+    <h3>No recipes yet</h3>
+  <% end %>   
+  
+</div>

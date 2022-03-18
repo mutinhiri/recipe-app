@@ -1,0 +1,43 @@
+<div class="inventories-page">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @inventory %>
+
+  <%= link_to "Add items", new_inventory_inventory_food_path(@inventory), class: "add-items" %>
+
+  <div>
+    <% if @inventory.inventory_foods.any? %>
+       <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Item Name</th>
+            <th>Item Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @inventory.inventory_foods.each_with_index do |item, index| %>
+            <tr>
+              <td><%= index+=1 %></td>
+              <td><%= item.food.name %></td>
+              <td><%= "#{item.quantity}#{item.food.measurement_unit}" %></td>
+              <td><%= button_to "Delete item", inventory_inventory_food_path(@inventory, item), method: :delete, class: 'delete-btn btn' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </table>   
+    <% else %>
+      <h4>No items in this inventory</h4>
+    <% end %>
+  </div>
+
+  <div class="show-btns">
+    <%= link_to "Rename Inventory", edit_inventory_path(@inventory), class: "link-btn" %> |
+    <%= link_to "Back to Inventories", inventories_path, class: "link-btn" %>
+
+    <%= button_to "Destroy Inventory", @inventory, method: :delete, class: 'delete-btn btn btn-margins' %>
+  </div>
+</div>
+

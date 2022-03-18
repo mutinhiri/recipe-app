@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+<div class="inventories-page">
+  <h2>Inventories</h2>
+  <div>
+    <%= link_to "New inventory", new_inventory_path, class: 'add-inventory' %>
+  </div>
+  <div>
+    <% if @inventories.any? %>
+      <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Inventory Name</th>
+            <th>Inventory Author</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+           <% @inventories.each_with_index do |inventory, index| %>
+            <tr>
+              <td><%= index+=1 %></td>
+              <td><%= inventory.name %></td>
+              <td><%= current_user.name %></td>
+              <td class="flex-buttons">
+                <%= link_to "Show", inventory, class: 'blue-button btn' %>
+                <%= button_to "Delete", inventory, method: :delete, class: 'delete-btn btn' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h3>No inventories yet</h3>
+    <% end %>   
+  </div>
+</div>
