@@ -1,10 +1,42 @@
-<p style="color: green"><%= notice %></p>
+<div class="inventories-page">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @recipe %>
-<%= button_to 'Add ingredients', new_recipe_food_path, :method => "get", :action => "new" %> 
+  <%= render @recipe %>
 
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
+  <%= link_to "Add items", new_recipe_recipe_food_path(@recipe), class: "add-items" %>
 
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+    <div>
+      <% if @recipe.recipe_foods.any? %>
+        <table>
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Item Name</th>
+              <th>Item Quantity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipe.recipe_foods.each_with_index do |item, index| %>
+              <tr>
+                <td><%= index+=1 %></td>
+                <td><%= item.food.name %></td>
+                <td><%= "#{item.quantity}#{item.food.measurement_unit}" %></td>
+                <td><%= button_to "Delete item", recipe_recipe_food_path(@recipe, item), method: :delete, class: 'delete-btn btn' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </table>   
+      <% else %>
+        <h4>No items in this recipe</h4>
+      <% end %>
+    </div>
+
+  <div>
+    <%= link_to "Back to recipes", recipes_path %>
+
+    <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+  </div>
 </div>
+

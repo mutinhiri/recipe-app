@@ -1,6 +1,7 @@
-Rails.application.routes.draw do  
-  resources :recipe_foods
-  resources :recipes
+Rails.application.routes.draw do    
+  resources :recipes do
+    resources :recipe_foods
+  end
   devise_for :users
   resources :foods
   get '/foods', to: 'foods#index', as: 'index'
@@ -11,6 +12,6 @@ Rails.application.routes.draw do
   root 'foods#index'
 
   resources :inventories do
-  resources :inventory_foods
+    resources :inventory_foods
   end
 end

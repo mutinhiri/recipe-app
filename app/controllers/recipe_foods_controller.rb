@@ -14,7 +14,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new
     @foods = Food.all
     @recipe_id = params[:recipe_id]
-    # @recipe = Recipe.find(@recipe_id)
+    @recipe = Recipe.find(@recipe_id)
   end
 
   # GET /recipe_foods/1/edit
@@ -27,17 +27,15 @@ class RecipeFoodsController < ApplicationController
 
   # POST /recipe_foods or /recipe_foods.json
   def create
+    @recipe_id = params[:recipe_id]
     @recipe_food = RecipeFood.new(recipe_food_params.merge(recipe_id: @recipe_id))
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_path(@recipe_id), success: 'Recipe food was successfully created.' }
+        format.html { redirect_to recipe_url(@recipe_id), notice: 'Recipe food was successfully created.' }
         format.json { render :show, status: :created, location: @recipe_food }
       else
-        format.html do
-          flash[:danger] = @recipe_food.errors.full_messages.join(', ')
-          redirect_back(fallback_location: root_path)
-        end
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
       end
     end
@@ -66,7 +64,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_id = params[:recipe_id]
 
     respond_to do |format|
-      format.html { redirect_to recipe_path(@recipe_id), success: 'Recipe food was successfully destroyed.' }
+      format.html { redirect_to recipe_path(@recipe_id), notice: 'Inventory food was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

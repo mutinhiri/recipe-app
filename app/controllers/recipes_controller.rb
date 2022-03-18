@@ -7,7 +7,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
 
   # GET /recipes/new
   def new
@@ -26,7 +28,7 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new recipe_params.merge(user_id: current_user.id)
+    @recipe = Recipe.new(recipe_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @recipe.save
