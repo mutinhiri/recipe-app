@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @recipe %>
+<%= button_to 'Add ingredients', new_recipe_food_path, :method => "get", :action => "new" %>
+  <%# <%= link_to 'Generate Shopping List', "/recipe_foods/new" %> 
 
 <div>
   <%= link_to "Back to recipes", recipes_path %>
