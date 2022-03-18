@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
+  before_action :authorize_user, only: [ :destroy ]
 
   def index
     @food = Food.all
@@ -46,4 +47,11 @@ class FoodsController < ApplicationController
   def set_food
     @food = Food.find(params[:id])
   end
+
+  def authorize_user
+    unless @food.user == current_user
+      redirect_to foods_path, notice: 'You are not authorized!'
+    end
+  end
+  
 end
