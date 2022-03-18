@@ -1,7 +1,7 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[show edit update destroy]
-  before_action :authorize_user, only: [ :destroy ]
-  
+  before_action :authorize_user, only: [:destroy]
+
   # GET /recipe_foods or /recipe_foods.json
   def index
     @recipe_foods = RecipeFood.all
@@ -83,9 +83,6 @@ class RecipeFoodsController < ApplicationController
   end
 
   def authorize_user
-    unless @recipe_food.user == current_user
-      redirect_to recipe_path, notice: 'You are not authorized!'
-    end
+    redirect_to recipe_path, notice: 'You are not authorized!' unless @recipe_food.user == current_user
   end
-
 end
